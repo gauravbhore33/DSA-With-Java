@@ -10,7 +10,7 @@ I'm currently learning Data Structures & Algorithms using Java by following Love
 - Day 5: Input/Output
 
 ## 🎯 Goal
-- Complete full DSA series (34+ lectures)
+- Complete full DSA series
 - Maintain daily consistency
 - Build strong problem-solving skills
 
