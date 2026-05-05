@@ -1,0 +1,64 @@
+1) Lock your daily workflow
+
+After every lecture:
+
+git add .
+git commit -m "Day 6: <topic you learned>"
+git push
+
+Keep commits meaningful. One lecture = one clean commit.
+
+2) Make your repo look intentional (README upgrade)
+
+Open README.md and turn it into a progress tracker:
+
+# 🚀 DSA With Java
+
+Following Love Babbar DSA Series
+
+## 📅 Progress
+- [x] Day 1 – Basics
+- [x] Day 2 – Variables
+- [x] Day 3 – Data Types
+- [x] Day 4 – Operators
+- [x] Day 5 – Input/Output
+- [ ] Day 6 – (next)
+
+## 🎯 Goal
+- Finish full DSA series
+- Solve problems alongside lectures
+- Stay consistent daily
+
+## 📌 Rule
+Code > Watch
+
+Update this daily. It shows discipline.
+
+
+3) Improve folder quality (small but powerful)
+
+Inside each lecture folder, add a notes.txt or README.md:
+
+Example:
+
+## Lecture 5 – Input/Output
+
+### Learned:
+- Scanner class
+- Taking user input
+
+### Key point:
+Always close scanner to avoid memory leak
+
+👉 This separates you from people who just dump code.
+
+4) Add problems (after ~10 lectures)
+
+Create:
+
+Problems/
+   Easy/
+   Medium/
+
+Start solving basic questions.
+Otherwise you’ll fall into the trap: “watched everything, can’t solve anything.”
