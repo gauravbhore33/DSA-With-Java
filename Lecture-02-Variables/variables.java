@@ -32,7 +32,7 @@ static void main() {
     int height$ = 12;
 
     // No Reserved Keyword
-    int class = 22;
+    int i = 22;
 
     // Lenght
     int hellojikaisehoo = 23;
@@ -44,6 +44,6 @@ static void main() {
     System.out.println(Days_OF_Year);
 
     // Camel Case
-    my_NameIsGauravBhore = 23;
+    int my_NameIsGauravBhore = 23;
 }
 }
