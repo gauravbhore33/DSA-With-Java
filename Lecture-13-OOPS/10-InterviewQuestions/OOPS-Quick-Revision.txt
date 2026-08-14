@@ -1,0 +1,302 @@
+==========================================================
+              JAVA OOPS QUICK REVISION
+==========================================================
+
+4 PILLARS
+----------------------------------------------------------
+
+Encapsulation → Data hiding
+Inheritance   → Reusability
+Polymorphism  → Many forms
+Abstraction   → Hide implementation details
+
+
+CLASS & OBJECT
+----------------------------------------------------------
+
+Class  = Blueprint
+Object = Instance of class
+
+
+CONSTRUCTOR
+----------------------------------------------------------
+
+Used to initialize objects.
+
+Same name as class.
+No return type.
+
+
+THIS
+----------------------------------------------------------
+
+this = Current object
+
+
+STATIC
+----------------------------------------------------------
+
+static = Belongs to class, not individual object
+
+
+INHERITANCE
+----------------------------------------------------------
+
+IS-A relationship.
+
+class Dog extends Animal
+
+
+TYPES
+----------------------------------------------------------
+
+Single
+Multilevel
+Hierarchical
+
+Multiple → Not through classes
+Multiple → Possible through interfaces
+
+
+SUPER
+----------------------------------------------------------
+
+super = Refers to parent class.
+
+
+ENCAPSULATION
+----------------------------------------------------------
+
+private data
+     +
+public getters/setters
+     =
+Encapsulation
+
+
+POLYMORPHISM
+----------------------------------------------------------
+
+Compile-time → Method Overloading
+
+Runtime → Method Overriding
+
+
+OVERLOADING
+----------------------------------------------------------
+
+Same method name
+Different parameters
+
+Decision → Compile time
+
+
+OVERRIDING
+----------------------------------------------------------
+
+Same method signature
+Parent → Child implementation
+
+Decision → Runtime
+
+
+ABSTRACTION
+----------------------------------------------------------
+
+Focus on WHAT, hide HOW.
+
+
+ABSTRACT CLASS
+----------------------------------------------------------
+
+Can contain:
+✓ Abstract methods
+✓ Concrete methods
+✓ Variables
+✓ Constructors
+
+Cannot create object directly.
+
+
+ABSTRACT METHOD
+----------------------------------------------------------
+
+Method without body.
+
+abstract void sound();
+
+
+INTERFACE
+----------------------------------------------------------
+
+Contract / blueprint for behavior.
+
+class Dog implements Animal
+
+
+Multiple interfaces:
+
+class C implements A, B
+
+
+ACCESS MODIFIERS
+----------------------------------------------------------
+
+private   → Same class
+default   → Same package
+protected → Same package + subclass
+public    → Everywhere
+
+
+FINAL
+----------------------------------------------------------
+
+final variable → Cannot reassign
+final method   → Cannot override
+final class    → Cannot inherit
+
+
+OBJECT CLASS
+----------------------------------------------------------
+
+java.lang.Object
+
+Root class of Java.
+
+
+IMPORTANT METHODS
+----------------------------------------------------------
+
+toString() → String representation
+
+equals()   → Logical equality
+
+hashCode() → Hash value
+
+
+== vs equals()
+----------------------------------------------------------
+
+==
+
+Objects → Reference comparison
+
+equals()
+
+→ Logical equality
+
+
+EQUALS + HASHCODE
+----------------------------------------------------------
+
+If:
+
+a.equals(b) == true
+
+Then:
+
+a.hashCode() == b.hashCode()
+
+
+UPCASTING
+----------------------------------------------------------
+
+Child → Parent
+
+Animal a = new Dog();
+
+
+DOWNCASTING
+----------------------------------------------------------
+
+Parent reference → Child reference
+
+Dog d = (Dog) a;
+
+
+RELATIONSHIPS
+----------------------------------------------------------
+
+Association
+→ General relationship
+
+
+Aggregation
+→ Weak HAS-A
+→ Independent lifecycle
+
+
+Composition
+→ Strong HAS-A
+→ Dependent lifecycle
+
+
+IS-A vs HAS-A
+----------------------------------------------------------
+
+IS-A → Inheritance
+
+Dog IS-A Animal
+
+
+HAS-A → Composition/Aggregation
+
+Car HAS-A Engine
+
+
+IMPORTANT KEYWORDS
+----------------------------------------------------------
+
+class
+interface
+extends
+implements
+this
+super
+static
+final
+abstract
+public
+private
+protected
+
+
+==========================================================
+INTERVIEW GOLDEN LINES
+==========================================================
+
+OOP:
+"OOP is a programming paradigm based on objects and
+classes. Its four main principles are encapsulation,
+inheritance, polymorphism and abstraction."
+
+
+ENCAPSULATION:
+"Encapsulation combines data and methods and restricts
+direct access to data using access modifiers."
+
+
+INHERITANCE:
+"Inheritance allows a child class to acquire properties
+and behavior of a parent class."
+
+
+POLYMORPHISM:
+"Polymorphism means one interface or reference can have
+multiple forms."
+
+
+ABSTRACTION:
+"Abstraction hides implementation details and exposes only
+the essential functionality."
+
+
+INTERFACE:
+"An interface defines a contract that implementing classes
+must follow."
+
+
+RUNTIME POLYMORPHISM:
+"Runtime polymorphism is achieved through method
+overriding, where the overridden method is selected based
+on the actual object at runtime."

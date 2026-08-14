@@ -1,0 +1,251 @@
+==========================================================
+             JAVA OOPS INTERVIEW QUESTIONS
+==========================================================
+
+BASIC OOPS
+----------------------------------------------------------
+
+1. What is OOP?
+
+2. What are the four pillars of OOP?
+
+3. What is a class?
+
+4. What is an object?
+
+5. Difference between class and object?
+
+6. What is encapsulation?
+
+7. What is inheritance?
+
+8. What is polymorphism?
+
+9. What is abstraction?
+
+10. Why is Java called an object-oriented language?
+
+
+CLASS & OBJECT
+----------------------------------------------------------
+
+11. What is a constructor?
+
+12. What are the types of constructors?
+
+13. Can a constructor be inherited?
+
+14. Can a constructor be overridden?
+
+15. Can a constructor be private?
+
+16. What is the use of this keyword?
+
+17. What is the use of static keyword?
+
+
+INHERITANCE
+----------------------------------------------------------
+
+18. What is inheritance?
+
+19. What are the types of inheritance?
+
+20. Does Java support multiple inheritance?
+
+21. Why doesn't Java support multiple inheritance using
+    classes?
+
+22. How can Java achieve multiple inheritance?
+
+23. What is the super keyword?
+
+24. What is IS-A relationship?
+
+25. What is HAS-A relationship?
+
+
+POLYMORPHISM
+----------------------------------------------------------
+
+26. What is polymorphism?
+
+27. What is method overloading?
+
+28. What is method overriding?
+
+29. Difference between overloading and overriding?
+
+30. What is compile-time polymorphism?
+
+31. What is runtime polymorphism?
+
+32. What is dynamic method dispatch?
+
+33. Can static methods be overridden?
+
+34. Can private methods be overridden?
+
+35. Can final methods be overridden?
+
+
+ABSTRACTION
+----------------------------------------------------------
+
+36. What is abstraction?
+
+37. What is an abstract class?
+
+38. What is an abstract method?
+
+39. Can an abstract class have a constructor?
+
+40. Can an abstract class have normal methods?
+
+41. Can we create an object of an abstract class?
+
+42. What is an interface?
+
+43. Difference between abstract class and interface?
+
+44. Can an interface have methods with implementation?
+
+45. Can a class implement multiple interfaces?
+
+
+ENCAPSULATION
+----------------------------------------------------------
+
+46. What is encapsulation?
+
+47. How is encapsulation achieved in Java?
+
+48. Why are variables generally declared private?
+
+49. What are getters and setters?
+
+50. Difference between encapsulation and abstraction?
+
+
+ACCESS MODIFIERS
+----------------------------------------------------------
+
+51. What are access modifiers in Java?
+
+52. What is public?
+
+53. What is private?
+
+54. What is protected?
+
+55. What is default access?
+
+56. Difference between private and protected?
+
+57. Difference between protected and public?
+
+
+IMPORTANT JAVA OOPS
+----------------------------------------------------------
+
+58. What is the final keyword?
+
+59. What is the Object class?
+
+60. What is toString()?
+
+61. What is equals()?
+
+62. Difference between == and equals()?
+
+63. What is hashCode()?
+
+64. Why should equals() and hashCode() be overridden
+    together?
+
+65. What is upcasting?
+
+66. What is downcasting?
+
+67. What is instanceof?
+
+
+RELATIONSHIPS
+----------------------------------------------------------
+
+68. What is association?
+
+69. What is aggregation?
+
+70. What is composition?
+
+71. Difference between aggregation and composition?
+
+72. What is a HAS-A relationship?
+
+73. What is an IS-A relationship?
+
+
+IMPORTANT COMPARISONS
+----------------------------------------------------------
+
+74. Class vs Object
+
+75. Abstract Class vs Interface
+
+76. Overloading vs Overriding
+
+77. Compile-time vs Runtime Polymorphism
+
+78. Encapsulation vs Abstraction
+
+79. Aggregation vs Composition
+
+80. == vs equals()
+
+81. final vs finally vs finalize()
+
+82. extends vs implements
+
+83. this vs super
+
+84. Upcasting vs Downcasting
+
+
+SCENARIO QUESTIONS
+----------------------------------------------------------
+
+85. Why would you use an interface instead of an abstract
+    class?
+
+86. Why should fields usually be private?
+
+87. When would you use composition instead of inheritance?
+
+88. Why is runtime polymorphism useful?
+
+89. What happens when a parent reference holds a child
+    object?
+
+90. What happens if you downcast to the wrong child class?
+
+91. Why is String immutable?
+
+92. Why does Java use Object as the root class?
+
+93. Why do we override toString()?
+
+94. Why must equal objects have the same hashCode()?
+
+95. Can we override a final method?
+
+96. Can we inherit a final class?
+
+97. Can an abstract class implement an interface?
+
+98. Can an interface extend another interface?
+
+99. Can a class extend one class and implement multiple
+    interfaces?
+
+100. Explain OOP using a real-world example.

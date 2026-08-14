@@ -1,0 +1,381 @@
+==========================================================
+              JAVA OOPS INTERVIEW ANSWERS
+==========================================================
+
+
+Q1. WHAT IS OOP?
+----------------------------------------------------------
+
+OOP stands for Object-Oriented Programming.
+
+It is a programming paradigm based on classes and objects.
+
+The four main principles are:
+
+1. Encapsulation
+2. Inheritance
+3. Polymorphism
+4. Abstraction
+
+
+----------------------------------------------------------
+
+Q2. WHAT IS A CLASS?
+----------------------------------------------------------
+
+A class is a blueprint or template used to create objects.
+
+It defines the properties and behaviors of objects.
+
+
+----------------------------------------------------------
+
+Q3. WHAT IS AN OBJECT?
+----------------------------------------------------------
+
+An object is an instance of a class.
+
+It represents a real entity and contains state and
+behavior.
+
+
+----------------------------------------------------------
+
+Q4. WHAT IS ENCAPSULATION?
+----------------------------------------------------------
+
+Encapsulation means wrapping data and methods together
+and restricting direct access to the data.
+
+In Java, it is commonly achieved using private variables
+and public getter/setter methods.
+
+
+----------------------------------------------------------
+
+Q5. WHAT IS INHERITANCE?
+----------------------------------------------------------
+
+Inheritance allows a child class to acquire properties
+and methods from a parent class.
+
+It improves code reusability.
+
+Example:
+
+class Dog extends Animal
+
+
+----------------------------------------------------------
+
+Q6. WHAT IS POLYMORPHISM?
+----------------------------------------------------------
+
+Polymorphism means "many forms".
+
+In Java, it is mainly achieved through:
+
+Method Overloading → Compile time
+Method Overriding  → Runtime
+
+
+----------------------------------------------------------
+
+Q7. WHAT IS ABSTRACTION?
+----------------------------------------------------------
+
+Abstraction means hiding unnecessary implementation
+details and showing only the essential functionality.
+
+In Java, abstraction is achieved using abstract classes
+and interfaces.
+
+
+----------------------------------------------------------
+
+Q8. OVERLOADING VS OVERRIDING?
+----------------------------------------------------------
+
+Overloading:
+- Same method name
+- Different parameters
+- Usually same class
+- Compile-time polymorphism
+
+Overriding:
+- Same method signature
+- Parent-child relationship
+- Runtime polymorphism
+
+
+----------------------------------------------------------
+
+Q9. ABSTRACT CLASS VS INTERFACE?
+----------------------------------------------------------
+
+Abstract class:
+- Can have abstract and concrete methods
+- Can have constructors
+- Can have instance variables
+- Extended using extends
+
+Interface:
+- Defines a contract
+- Implemented using implements
+- A class can implement multiple interfaces
+
+
+----------------------------------------------------------
+
+Q10. DOES JAVA SUPPORT MULTIPLE INHERITANCE?
+----------------------------------------------------------
+
+Java does not support multiple inheritance through
+classes.
+
+However, Java supports multiple inheritance through
+interfaces.
+
+Example:
+
+class Smartphone implements Camera, MusicPlayer
+
+
+----------------------------------------------------------
+
+Q11. WHAT IS RUNTIME POLYMORPHISM?
+----------------------------------------------------------
+
+Runtime polymorphism occurs when a parent reference
+refers to a child object and the overridden method is
+selected at runtime.
+
+Example:
+
+Animal a = new Dog();
+a.sound();
+
+Here Dog's sound() method executes.
+
+
+----------------------------------------------------------
+
+Q12. WHAT IS ENCAPSULATION VS ABSTRACTION?
+----------------------------------------------------------
+
+Encapsulation focuses on protecting data and controlling
+access to it.
+
+Abstraction focuses on hiding implementation details and
+showing essential functionality.
+
+
+----------------------------------------------------------
+
+Q13. WHAT IS == VS EQUALS()?
+----------------------------------------------------------
+
+For objects, == compares references.
+
+equals() is used for logical equality when it is properly
+overridden.
+
+
+----------------------------------------------------------
+
+Q14. WHY OVERRIDE HASHCODE() WHEN OVERRIDING EQUALS()?
+----------------------------------------------------------
+
+Because equal objects must have the same hash code.
+
+This is important for hash-based collections such as
+HashMap and HashSet.
+
+
+----------------------------------------------------------
+
+Q15. WHAT IS UPCASTING?
+----------------------------------------------------------
+
+Upcasting means assigning a child object to a parent
+reference.
+
+Example:
+
+Animal a = new Dog();
+
+It is automatic and commonly used in runtime polymorphism.
+
+
+----------------------------------------------------------
+
+Q16. WHAT IS DOWNCASTING?
+----------------------------------------------------------
+
+Downcasting means converting a parent reference into a
+child reference.
+
+Example:
+
+Dog d = (Dog) a;
+
+It requires explicit casting and should be done only when
+the actual object is of that child type.
+
+
+----------------------------------------------------------
+
+Q17. WHAT IS ASSOCIATION?
+----------------------------------------------------------
+
+Association is a general relationship between two
+independent objects.
+
+Example:
+
+Doctor ↔ Patient
+
+
+----------------------------------------------------------
+
+Q18. WHAT IS AGGREGATION?
+----------------------------------------------------------
+
+Aggregation is a weak HAS-A relationship where both
+objects can exist independently.
+
+Example:
+
+Department HAS-A Teacher.
+
+
+----------------------------------------------------------
+
+Q19. WHAT IS COMPOSITION?
+----------------------------------------------------------
+
+Composition is a strong HAS-A relationship where the
+contained object's lifecycle is dependent on the
+containing object.
+
+Example:
+
+House HAS-A Room.
+
+
+----------------------------------------------------------
+
+Q20. WHAT IS FINAL?
+----------------------------------------------------------
+
+final restricts modification.
+
+final variable → Cannot be reassigned
+final method   → Cannot be overridden
+final class    → Cannot be inherited
+
+
+----------------------------------------------------------
+
+Q21. WHAT IS THE OBJECT CLASS?
+----------------------------------------------------------
+
+java.lang.Object is the root class of Java.
+
+Every Java class directly or indirectly inherits from
+Object.
+
+Important methods include:
+
+toString()
+equals()
+hashCode()
+getClass()
+
+
+----------------------------------------------------------
+
+Q22. WHAT IS toString()?
+----------------------------------------------------------
+
+toString() returns a string representation of an object.
+
+I override it when I want meaningful object information
+instead of the default representation.
+
+
+----------------------------------------------------------
+
+Q23. WHAT IS A CONSTRUCTOR?
+----------------------------------------------------------
+
+A constructor is a special member used to initialize an
+object.
+
+It has the same name as the class and does not have a
+return type.
+
+
+----------------------------------------------------------
+
+Q24. WHAT IS this KEYWORD?
+----------------------------------------------------------
+
+this refers to the current object.
+
+It is commonly used to distinguish instance variables
+from constructor or method parameters.
+
+
+----------------------------------------------------------
+
+Q25. WHAT IS super KEYWORD?
+----------------------------------------------------------
+
+super refers to the immediate parent class.
+
+It can be used to access parent variables, methods and
+constructors.
+
+
+==========================================================
+HOW TO ANSWER OOPS IN AN INTERVIEW
+==========================================================
+
+Use this pattern:
+
+1. Definition
+2. Purpose
+3. Small example
+4. Important difference
+
+
+Example:
+
+Interviewer:
+"What is polymorphism?"
+
+Answer:
+
+"Polymorphism means one interface or reference can have
+multiple forms. In Java, it is mainly achieved through
+method overloading and method overriding. Overloading is
+compile-time polymorphism, while overriding is runtime
+polymorphism. For example, a parent reference can point
+to a child object and execute the child's overridden
+method."
+
+
+==========================================================
+IMPORTANT RULE
+==========================================================
+
+Do NOT memorize long textbook answers.
+
+Understand:
+
+WHAT?
+WHY?
+HOW?
+EXAMPLE?
+DIFFERENCE?
