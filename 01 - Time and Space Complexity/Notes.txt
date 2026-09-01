@@ -1,0 +1,1343 @@
+📘 DSA WITH JAVA — 01 TIME & SPACE COMPLEXITY
+1. What is an Algorithm?
+
+An algorithm is a step-by-step procedure used to solve a particular problem.
+
+Example
+
+Problem: Find the largest number in an array.
+
+int max = arr[0];
+
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+
+The algorithm:
+
+Assume first element is maximum.
+Compare it with every other element.
+Update maximum when a larger element is found.
+Return maximum.
+2. Why Do We Need Complexity Analysis?
+
+Suppose two programmers solve the same problem.
+
+Program A
+
+Takes:
+
+1 second
+
+Program B
+
+Takes:
+
+10 minutes
+
+Both may give the correct answer.
+
+So we need to know:
+
+How efficiently does an algorithm use time and memory as input size increases?
+
+That's where complexity analysis comes in.
+
+3. What is Time Complexity?
+
+Time complexity describes how the running time of an algorithm grows as the input size n increases.
+
+It does not normally mean the exact number of seconds.
+
+Instead, we study the growth rate.
+
+Example
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+
+If:
+
+n = 10       → 10 iterations
+n = 100      → 100 iterations
+n = 1000     → 1000 iterations
+
+The work grows approximately with n.
+
+Therefore:
+
+Time Complexity = O(n)
+
+4. What is Space Complexity?
+
+Space complexity describes how much additional memory an algorithm requires as input size increases.
+
+Example:
+
+int sum = 0;
+
+for(int i = 0; i < n; i++) {
+    sum += arr[i];
+}
+
+Only a few variables are created regardless of n.
+
+Therefore:
+
+Auxiliary Space = O(1)
+
+5. Input Size — n
+
+We usually represent input size using:
+
+n
+
+For an array:
+
+int[] arr = new int[n];
+
+n = number of elements.
+
+For a string:
+
+String s
+
+n = length of the string.
+
+For a matrix:
+
+n × m
+
+we may use both n and m.
+
+6. Big-O Notation
+
+The most important notation in DSA is:
+
+Big-O — O(...)
+
+Big-O describes the upper-bound growth rate of an algorithm.
+
+In interviews, when someone asks:
+
+"What is the complexity?"
+
+they commonly expect you to give the Big-O complexity.
+
+Examples:
+
+O(1)
+O(log n)
+O(n)
+O(n log n)
+O(n²)
+O(2ⁿ)
+O(n!)
+7. Complexity Ranking
+
+From generally fastest → slowest:
+
+O(1)
+   ↓
+O(log n)
+   ↓
+O(n)
+   ↓
+O(n log n)
+   ↓
+O(n²)
+   ↓
+O(n³)
+   ↓
+O(2ⁿ)
+   ↓
+O(n!)
+
+Remember this order.
+
+Interview shortcut:
+
+Smaller growth rate = better scalability.
+
+8. O(1) — Constant Time
+
+The algorithm takes approximately the same amount of work regardless of input size.
+
+Example
+int x = arr[0];
+
+Whether the array contains:
+
+10 elements
+1000 elements
+1,000,000 elements
+
+we directly access index 0.
+
+Therefore:
+
+O(1)
+
+Another example
+int sum = a + b;
+
+Constant number of operations.
+
+Key idea
+Input ↑
+Work → approximately constant
+9. O(log n) — Logarithmic Time
+
+The input is repeatedly reduced by a factor, commonly by half.
+
+The classic example is Binary Search.
+
+while(left <= right) {
+
+    int mid = left + (right - left) / 2;
+
+    if(arr[mid] == target)
+        return mid;
+
+    if(arr[mid] < target)
+        left = mid + 1;
+    else
+        right = mid - 1;
+}
+
+Every iteration eliminates roughly half of the remaining search space.
+
+Example:
+
+n = 16
+
+16
+ ↓
+8
+ ↓
+4
+ ↓
+2
+ ↓
+1
+
+Approximately 4 steps.
+
+Therefore:
+
+O(log n)
+
+Important clue
+
+Whenever you see:
+
+n / 2
+n / 4
+n / 8
+...
+
+think:
+
+O(log n)
+10. O(n) — Linear Time
+
+The algorithm processes the input once.
+
+Example
+for(int i = 0; i < n; i++) {
+    System.out.println(arr[i]);
+}
+
+n elements → n operations.
+
+Therefore:
+
+O(n)
+
+Common examples
+Traversing an array
+Linear search
+Finding maximum
+Finding minimum
+Counting elements
+11. O(n²) — Quadratic Time
+
+Usually occurs with two nested loops, where both depend on n.
+
+Example
+for(int i = 0; i < n; i++) {
+
+    for(int j = 0; j < n; j++) {
+        System.out.println(i + " " + j);
+    }
+}
+
+Outer loop:
+
+n
+
+Inner loop:
+
+n
+
+Total:
+
+n × n = n²
+
+Therefore:
+
+O(n²)
+
+Common examples
+Bubble Sort
+Selection Sort
+Comparing every pair
+Brute-force pair problems
+12. O(n³) — Cubic Time
+
+Three nested loops.
+
+for(int i = 0; i < n; i++) {
+
+    for(int j = 0; j < n; j++) {
+
+        for(int k = 0; k < n; k++) {
+            // work
+        }
+    }
+}
+
+Therefore:
+
+n × n × n = n³
+
+O(n³)
+
+Usually undesirable for large input sizes.
+
+13. O(2ⁿ) — Exponential Time
+
+Common in recursive algorithms where each call produces approximately two more calls.
+
+Example concept:
+
+f(n) {
+    f(n - 1);
+    f(n - 1);
+}
+
+The number of calls grows exponentially.
+
+O(2ⁿ)
+
+Common example:
+
+Naive recursive Fibonacci
+Some brute-force subset problems
+14. O(n!) — Factorial Time
+
+Extremely expensive.
+
+Commonly appears when generating all permutations.
+
+For n elements:
+
+n!
+
+permutations exist.
+
+Example:
+
+3! = 6
+4! = 24
+5! = 120
+10! = 3,628,800
+
+This grows extremely quickly.
+
+15. Constant Factors
+
+Suppose:
+
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+
+This performs roughly:
+
+n + n = 2n
+
+So technically:
+
+O(2n)
+
+But in Big-O we ignore constant factors:
+
+O(n)
+
+Therefore:
+
+O(2n) → O(n)
+O(5n) → O(n)
+O(100n) → O(n)
+16. Lower-Order Terms
+
+Suppose an algorithm performs:
+
+n² + n + 10
+
+The dominant term is:
+
+n²
+
+Therefore:
+
+O(n²)
+
+We ignore:
+
++n
++10
+
+because for very large n, n² dominates them.
+
+Rule
+O(n² + n + 10)
+        ↓
+      O(n²)
+17. How to Calculate Complexity
+
+This is one of the most important skills.
+
+Case 1 — Single Loop
+for(int i = 0; i < n; i++) {
+    // work
+}
+
+Runs n times.
+
+Answer:
+
+O(n)
+
+Case 2 — Two Separate Loops
+for(int i = 0; i < n; i++) {
+    // work
+}
+
+for(int j = 0; j < n; j++) {
+    // work
+}
+
+Complexity:
+
+O(n) + O(n)
+= O(2n)
+= O(n)
+Answer:
+
+O(n)
+
+Case 3 — Nested Loops
+for(int i = 0; i < n; i++) {
+
+    for(int j = 0; j < n; j++) {
+
+    }
+}
+
+Multiply:
+
+O(n) × O(n)
+= O(n²)
+Answer:
+
+O(n²)
+
+Case 4 — Different Input Sizes
+for(int i = 0; i < n; i++) {
+}
+
+for(int j = 0; j < m; j++) {
+}
+
+Complexity:
+
+O(n + m)
+
+Don't write O(n).
+
+Because n and m are different inputs.
+
+Case 5 — Nested Different Inputs
+for(int i = 0; i < n; i++) {
+
+    for(int j = 0; j < m; j++) {
+
+    }
+}
+
+Complexity:
+
+O(n × m)
+
+or:
+
+O(nm)
+
+Case 6 — Loop That Doubles
+for(int i = 1; i < n; i *= 2) {
+}
+
+Values:
+
+1
+2
+4
+8
+16
+32
+...
+
+Therefore:
+
+O(log n)
+
+Case 7 — Loop That Halves
+for(int i = n; i > 0; i /= 2) {
+}
+
+Again:
+
+O(log n)
+
+Case 8 — Nested n and log n
+for(int i = 0; i < n; i++) {
+
+    for(int j = 1; j < n; j *= 2) {
+
+    }
+}
+
+Outer:
+
+O(n)
+
+Inner:
+
+O(log n)
+
+Total:
+
+O(n log n)
+18. Best, Average and Worst Case
+
+An algorithm can behave differently depending on the input.
+
+Best Case
+
+Minimum amount of work.
+
+Average Case
+
+Expected/average amount of work.
+
+Worst Case
+
+Maximum amount of work.
+
+Example — Linear Search
+
+Array:
+
+[10, 20, 30, 40, 50]
+
+Search for 10.
+
+It's the first element.
+
+Best Case:
+
+O(1)
+
+Search for 50.
+
+Need to check everything.
+
+Worst Case:
+
+O(n)
+
+19. Why Worst Case is Important
+
+In interviews, when someone asks:
+
+"What is the time complexity?"
+
+you should normally state the relevant worst-case complexity, unless the context specifically asks for best/average case.
+
+Example:
+
+Linear Search
+Best:   O(1)
+Average: O(n)
+Worst:  O(n)
+20. Space Complexity
+
+Now the second major part.
+
+Suppose:
+
+int x = 10;
+int y = 20;
+int sum = x + y;
+
+Only a fixed number of variables are used.
+
+Space:
+
+O(1)
+
+21. O(n) Space
+
+Suppose:
+
+int[] copy = new int[n];
+
+The extra array grows with n.
+
+Therefore:
+
+O(n) auxiliary space
+
+22. Time vs Space
+
+An algorithm can be:
+
+Fast but use more memory
+
+or:
+
+Use less memory but take more time
+
+This is called a:
+
+Time-Space Tradeoff
+
+Example:
+
+Instead of repeatedly searching an array, you might store values in a HashSet.
+
+You use additional memory but can often reduce search time.
+
+23. Auxiliary Space vs Input Space
+
+This distinction is important.
+
+Suppose:
+
+void solve(int[] arr)
+
+The array itself is already provided as input.
+
+We generally don't count the input storage when discussing auxiliary space.
+
+If you create:
+
+int[] result = new int[n];
+
+that's additional memory.
+
+So:
+
+Input Space
+
+Memory required to store the input.
+
+Auxiliary Space
+
+Extra memory used by the algorithm apart from the input.
+
+24. Recursion and Space Complexity
+
+Recursion uses the call stack.
+
+Example:
+
+void fun(int n) {
+
+    if(n == 0)
+        return;
+
+    fun(n - 1);
+}
+
+There can be n active calls.
+
+Therefore:
+
+Auxiliary Space = O(n)
+
+Even if you aren't creating an array, recursion consumes stack memory.
+
+25. Common Data Structure Complexities
+
+You should eventually memorize these for interviews.
+
+Array
+Operation	Complexity
+Access	O(1)
+Search	O(n)
+Insert at end*	O(1)
+Insert middle	O(n)
+Delete middle	O(n)
+
+* assuming space is available / dynamic-array amortized behavior where applicable.
+
+26. ArrayList
+
+In Java:
+
+ArrayList<Integer> list = new ArrayList<>();
+
+Typical complexities:
+
+Operation	Complexity
+Get by index	O(1)
+Search	O(n)
+Add at end	O(1) amortized
+Insert middle	O(n)
+Remove middle	O(n)
+27. Linked List
+Operation	Complexity
+Access by index	O(n)
+Search	O(n)
+Insert at known node	O(1)
+Delete known node	O(1)
+Insert at beginning	O(1)
+
+The exact complexity depends on whether you already have a reference to the relevant node/position.
+
+28. Stack
+
+Typical:
+
+push → O(1)
+pop  → O(1)
+peek → O(1)
+
+Java example:
+
+Deque<Integer> stack = new ArrayDeque<>();
+29. Queue
+
+Typical:
+
+enqueue → O(1)
+dequeue → O(1)
+front/peek → O(1)
+
+Java:
+
+Queue<Integer> q = new LinkedList<>();
+
+or preferably for many stack/queue use cases:
+
+Deque<Integer> q = new ArrayDeque<>();
+30. HashMap
+
+Average-case typical:
+
+Insert → O(1)
+Search → O(1)
+Delete → O(1)
+
+Worst-case behavior can be different, but for basic interview analysis you will commonly state average O(1).
+
+Java:
+
+HashMap<Integer, Integer> map = new HashMap<>();
+31. HashSet
+
+Average:
+
+Add → O(1)
+Search → O(1)
+Remove → O(1)
+
+Java:
+
+HashSet<Integer> set = new HashSet<>();
+32. Binary Search Tree
+
+For a balanced BST:
+
+Search → O(log n)
+Insert → O(log n)
+Delete → O(log n)
+
+But a badly skewed BST can become:
+
+O(n)
+
+So always pay attention to whether the tree is balanced.
+
+33. Heap / Priority Queue
+
+Typical:
+
+Insert → O(log n)
+Remove → O(log n)
+Peek   → O(1)
+
+Java:
+
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+34. Sorting Complexities
+
+Important for interviews:
+
+Algorithm	Best	Average	Worst
+Bubble Sort	O(n)*	O(n²)	O(n²)
+Selection Sort	O(n²)	O(n²)	O(n²)
+Insertion Sort	O(n)	O(n²)	O(n²)
+Merge Sort	O(n log n)	O(n log n)	O(n log n)
+Quick Sort	O(n log n)	O(n log n)	O(n²)
+
+* Bubble Sort can be O(n) with an appropriate early-exit optimization when the input is already sorted.
+
+35. Java Sorting
+
+For:
+
+Arrays.sort(arr);
+
+you should know that the exact algorithm/complexity depends on the array type and Java implementation.
+
+For interview-level reasoning, don't blindly claim every Java sort is exactly the same.
+
+For common primitive arrays, Java uses an optimized dual-pivot quicksort implementation, while object/reference-array sorting uses a different algorithm.
+
+The important lesson:
+
+Know the complexity of the algorithm you're discussing, not just the method name.
+
+36. Complexity of Common DSA Algorithms
+
+Keep this table for revision:
+
+Algorithm	Typical Complexity
+Linear Search	O(n)
+Binary Search	O(log n)
+Bubble Sort	O(n²)
+Selection Sort	O(n²)
+Insertion Sort	O(n²)
+Merge Sort	O(n log n)
+Quick Sort	O(n log n) average
+BFS	O(V + E)
+DFS	O(V + E)
+HashMap lookup	O(1) average
+Heap insertion	O(log n)
+Heap removal	O(log n)
+37. Amortized Complexity
+
+You will encounter this later with things like ArrayList.
+
+Suppose adding an element is usually:
+
+O(1)
+
+But occasionally the internal array becomes full and needs resizing.
+
+That particular operation can take:
+
+O(n)
+
+However, over a long sequence of insertions, the amortized cost is:
+
+O(1) per append.
+
+You don't need to go extremely deep into amortized analysis right now.
+
+Just understand the idea.
+
+38. Common Complexity Patterns
+
+Memorize these patterns.
+
+Pattern 1
+for(int i = 0; i < n; i++)
+
+→ O(n)
+
+Pattern 2
+for(int i = 0; i < n; i++)
+    for(int j = 0; j < n; j++)
+
+→ O(n²)
+
+Pattern 3
+for(int i = 1; i < n; i *= 2)
+
+→ O(log n)
+
+Pattern 4
+for(int i = 0; i < n; i++)
+    for(int j = 1; j < n; j *= 2)
+
+→ O(n log n)
+
+Pattern 5
+function(n - 1)
+
+→ Often O(n) recursion depth, depending on work.
+
+Pattern 6
+function(n - 1);
+function(n - 1);
+
+→ Often O(2ⁿ) for the naive recurrence, depending on the exact function.
+
+39. How to Analyze Any Code
+
+When you see an unfamiliar program, use this method:
+
+Step 1
+
+Find the input size.
+
+n?
+m?
+n × m?
+Step 2
+
+Count loops.
+
+Step 3
+
+Check whether loops are:
+
+Sequential → Add
+Nested → Multiply
+Step 4
+
+Check whether the variable:
+
++1 → O(n)
+×2 → O(log n)
+÷2 → O(log n)
+Step 5
+
+Remove constants.
+
+Step 6
+
+Remove lower-order terms.
+
+Step 7
+
+Find the dominant term.
+
+40. Example Analysis
+
+Consider:
+
+for(int i = 0; i < n; i++) {
+
+    for(int j = 0; j < n; j++) {
+        System.out.println(i + j);
+    }
+}
+
+for(int k = 0; k < n; k++) {
+    System.out.println(k);
+}
+
+First part:
+
+O(n²)
+
+Second:
+
+O(n)
+
+Together:
+
+O(n² + n)
+
+Drop lower term:
+
+O(n²)
+Final:
+
+Time = O(n²)
+
+41. Another Example
+for(int i = 1; i < n; i *= 2) {
+
+    for(int j = 0; j < n; j++) {
+
+    }
+}
+
+Outer:
+
+O(log n)
+
+Inner:
+
+O(n)
+
+Multiply:
+
+O(n log n)
+Final:
+
+O(n log n)
+
+42. Complexity and Constraints
+
+This is VERY important for competitive programming and placement coding.
+
+Suppose:
+
+n ≤ 10
+
+Even exponential algorithms might sometimes work.
+
+But if:
+
+n ≤ 100,000
+
+then an:
+
+O(n²)
+
+solution may be too slow.
+
+You should start looking for:
+
+O(n)
+O(n log n)
+
+solutions.
+
+43. Rough Constraint Thinking
+
+This is not a strict law because actual limits depend on the platform and language, but as a first mental filter:
+
+Input size	Usually consider
+n ≤ 10	Brute force / exponential may work
+n ≤ 20	Backtracking / 2ⁿ may sometimes work
+n ≤ 100	O(n³) may sometimes work
+n ≤ 1,000	O(n²) may often work
+n ≤ 100,000	O(n log n) / O(n)
+n ≤ 1,000,000	Usually O(n) or close
+
+Don't blindly apply this table. Always consider the actual time limit and operation count.
+
+44. Brute Force vs Optimized Solution
+
+This is one of the most important DSA concepts.
+
+Suppose:
+
+Find whether two numbers sum to a target.
+
+Brute Force
+
+Check every pair:
+
+O(n²)
+Optimized
+
+Use HashSet/HashMap:
+
+O(n) average
+
+The point of learning DSA is not just:
+
+"Can I solve this?"
+
+It's:
+
+"Can I solve this efficiently?"
+
+45. Time-Space Tradeoff Example
+Approach 1
+
+Repeatedly search the array.
+
+Time: O(n²)
+Space: O(1)
+Approach 2
+
+Store values in HashSet.
+
+Time: O(n) average
+Space: O(n)
+
+You've traded:
+
+more memory → less time
+
+This idea will appear constantly throughout DSA.
+
+46. Big-O vs Big-Theta vs Big-Omega
+
+For placement interviews, you should know the basic distinction.
+
+Big-O — O
+
+Upper bound / asymptotic upper growth.
+
+Big-Omega — Ω
+
+Lower bound / asymptotic lower growth.
+
+Big-Theta — Θ
+
+Tight asymptotic bound.
+
+Example:
+
+f(n) = 3n + 5
+
+Its tight asymptotic bound is:
+
+Θ(n)
+
+and it is also:
+
+O(n)
+
+and:
+
+Ω(n).
+
+For your practical DSA preparation:
+
+Big-O is the notation you will use most often.
+
+47. Common Mistakes
+❌ Mistake 1
+
+Thinking Big-O means exact seconds.
+
+It doesn't.
+
+❌ Mistake 2
+
+Thinking:
+
+O(2n) != O(n)
+
+They are both:
+
+O(n)
+
+❌ Mistake 3
+
+Adding nested loops instead of multiplying.
+
+nested n + n
+
+is generally:
+
+O(n²)
+
+not O(n).
+
+❌ Mistake 4
+
+Thinking every loop means O(n).
+
+This:
+
+i *= 2
+
+is:
+
+O(log n)
+
+❌ Mistake 5
+
+Ignoring recursion stack.
+
+Recursion consumes memory.
+
+❌ Mistake 6
+
+Ignoring space complexity.
+
+In an interview, try to give:
+
+Time: O(n)
+Space: O(n)
+
+rather than only time.
+
+48. Interview Answer Format
+
+Whenever you solve a coding problem, train yourself to say:
+
+"The time complexity is O(n) because we traverse the array once. The auxiliary space is O(1) because we only use a constant number of variables."
+
+Or:
+
+"The time complexity is O(n log n), mainly due to sorting, and the auxiliary space depends on the sorting algorithm/implementation."
+
+This will make you sound much more interview-ready.
+
+49. Your One-Page Revision Sheet
+
+When revising this chapter, remember:
+
+TIME & SPACE COMPLEXITY
+=======================
+
+O(1)       → Constant
+O(log n)   → Divide/reduce
+O(n)       → One traversal
+O(n log n) → Efficient sorting / divide & conquer
+O(n²)      → Two nested loops
+O(n³)      → Three nested loops
+O(2ⁿ)      → Exponential
+O(n!)      → Permutations
+
+Sequential operations → ADD
+Nested operations     → MULTIPLY
+
+Ignore:
+- Constants
+- Lower-order terms
+
+Keep:
+- Dominant term
+
+Examples:
+1 loop       → O(n)
+2 nested     → O(n²)
+i *= 2       → O(log n)
+n + n        → O(n)
+n × log n    → O(n log n)
+
+Time = execution growth
+Space = memory growth
+
+Recursion → consider call stack
+
+HashMap → O(1) average lookup
+Binary Search → O(log n)
+Linear Search → O(n)
+Merge Sort → O(n log n)
+BFS/DFS → O(V + E)
+🎯 What YOU need to master before moving to Arrays
+
+Don't leave this chapter until you can confidently answer these:
+
+Basic
+What is an algorithm?
+What is time complexity?
+What is space complexity?
+What is Big-O?
+What is O(1)?
+What is O(log n)?
+What is O(n)?
+What is O(n²)?
+Code analysis
+Complexity of one loop?
+Complexity of nested loops?
+Complexity of two separate loops?
+Complexity of i *= 2?
+Complexity of i /= 2?
+Complexity of n × m loops?
+Complexity of recursion?
+Interview level
+Best vs average vs worst case?
+What is auxiliary space?
+What is time-space tradeoff?
+Why is binary search O(log n)?
+Why is HashMap lookup O(1) average?
+Why is merge sort O(n log n)?
+Why can a BST become O(n)?
+Why does recursion consume space?
+What does amortized O(1) mean?
+Difference between O, Ω and Θ?
+🧪 Your Day-1 Practice
+
+Before you move to 02-Arrays, solve these yourself.
+
+Q1
+
+What is the complexity?
+
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+Q2
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+        System.out.println(i + j);
+    }
+}
+Q3
+for(int i = 1; i < n; i *= 2) {
+    System.out.println(i);
+}
+Q4
+for(int i = 0; i < n; i++) {
+}
+
+for(int j = 0; j < n; j++) {
+}
+Q5
+for(int i = 0; i < n; i++) {
+    for(int j = 1; j < n; j *= 2) {
+    }
+}
+Q6
+int x = arr[500];
+
+What is the complexity?
+
+Q7
+
+An algorithm takes:
+
+n² + 3n + 100
+
+What is its Big-O?
+
+Q8
+
+Which is better for large n?
+
+O(n²)
+or
+O(n log n)
+Q9
+
+Why does binary search have O(log n)?
+
+Q10
+
+If an algorithm uses an additional array of size n, what is its auxiliary space?
+
+⭐ Your target
+
+Don't memorize this chapter like theory.
+
+You should be able to look at code and calculate the complexity yourself.
+
+Once you can do that, move to:
+
+02 — ARRAYS
+
+And from there, we'll start converting these complexity concepts into actual DSA problem-solving.
