@@ -9,7 +9,6 @@ public class MoreArrayProblem {
         leftRotateByOne();
         rightRotateByOne();
         commonElements();
-        mergeArrays();
         pairWithGivenSum();
         basicSubarraySum();
     }
@@ -177,33 +176,6 @@ public class MoreArrayProblem {
 
         System.out.println();
     }
-
-
-    // 8. Merge two arrays
-    static void mergeArrays() {
-
-        int arr1[] = {10, 20, 30};
-        int arr2[] = {40, 50, 60};
-
-        int merged[] = new int[arr1.length + arr2.length];
-
-        for (int i = 0; i < arr1.length; i++) {
-            merged[i] = arr1[i];
-        }
-
-        for (int i = 0; i < arr2.length; i++) {
-            merged[arr1.length + i] = arr2[i];
-        }
-
-        System.out.print("8. Merged Array: ");
-
-        for (int i = 0; i < merged.length; i++) {
-            System.out.print(merged[i] + " ");
-        }
-
-        System.out.println();
-    }
-
 
     // 9. Find a pair with a given sum
     static void pairWithGivenSum() {
